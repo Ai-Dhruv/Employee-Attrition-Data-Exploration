@@ -1,0 +1,129 @@
+/* ===== Employee Attrition Analytics - custom theme (dark navy / purple / blue) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0B1020;
+  --card: #131A36;
+  --border: rgba(139, 92, 246, 0.22);
+  --text: #E6E9F5;
+  --muted: #9AA3C7;
+  --purple: #8B5CF6;
+  --blue: #3B82F6;
+  --sky: #38BDF8;
+}
+
+html, body, .stApp, [class*="css"] { font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+.stApp {
+  background: radial-gradient(1100px 520px at 90% -8%, rgba(139, 92, 246, 0.20), transparent 60%),
+              radial-gradient(900px 460px at -5% 0%, rgba(59, 130, 246, 0.12), transparent 60%),
+              var(--bg);
+  color: var(--text);
+}
+
+#MainMenu, footer { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }
+.block-container { padding-top: 1.6rem; padding-bottom: 3rem; max-width: 1400px; }
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #0E1433 0%, #1A1245 100%);
+  border-right: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 12px; padding: 0.4rem 0 1.2rem; }
+.brand-logo {
+  width: 44px; height: 44px; border-radius: 12px; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+}
+.brand-name { font-weight: 800; font-size: 1.05rem; line-height: 1.15; color: var(--text); }
+.brand-tag { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
+.sidebar-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--muted);
+  margin: 1.3rem 0 0.4rem; text-transform: uppercase;
+}
+
+/* Radio buttons styled as a navigation menu */
+[data-testid="stSidebar"] div[role="radiogroup"] { gap: 0.25rem; }
+[data-testid="stSidebar"] div[role="radiogroup"] > label {
+  width: 100%; padding: 0.6rem 0.85rem; border-radius: 10px;
+  border: 1px solid transparent; transition: background 0.15s ease;
+}
+[data-testid="stSidebar"] div[role="radiogroup"] > label:hover { background: rgba(139, 92, 246, 0.14); }
+[data-testid="stSidebar"] div[role="radiogroup"] > label:has(input:checked) {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.38), rgba(59, 130, 246, 0.26));
+  border-color: var(--border);
+}
+[data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child { display: none; }
+
+/* ---------- Header ---------- */
+.hero {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 1.6rem 1.8rem; border-radius: 20px; margin-bottom: 1.4rem;
+  background: linear-gradient(120deg, rgba(139, 92, 246, 0.32), rgba(59, 130, 246, 0.20) 60%, rgba(19, 26, 54, 0.9));
+  border: 1px solid var(--border); box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+}
+.hero-title { font-size: 2rem; font-weight: 800; margin: 0; color: #fff; letter-spacing: -0.02em; }
+.hero-sub { margin: 0.35rem 0 0; color: #C5CBEA; font-size: 0.98rem; }
+.date-pill {
+  padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+  background: rgba(11, 16, 32, 0.55); border: 1px solid var(--border); color: var(--text);
+}
+
+/* ---------- KPI cards ---------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 0.6rem; }
+.kpi-card {
+  display: flex; gap: 1rem; align-items: center; padding: 1.15rem 1.25rem;
+  border-radius: 18px; background: var(--card); border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.30);
+}
+.kpi-icon {
+  width: 52px; height: 52px; border-radius: 14px; font-size: 24px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.kpi-card.blue .kpi-icon   { background: rgba(59, 130, 246, 0.20); }
+.kpi-card.sky .kpi-icon    { background: rgba(56, 189, 248, 0.18); }
+.kpi-card.purple .kpi-icon { background: rgba(168, 85, 247, 0.22); }
+.kpi-card.pink .kpi-icon   { background: rgba(236, 72, 153, 0.18); }
+.kpi-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.kpi-value { font-size: 1.9rem; font-weight: 800; color: #fff; line-height: 1.15; }
+.kpi-note { font-size: 0.75rem; color: var(--muted); }
+
+/* ---------- Section headings ---------- */
+.section-head { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin: 2.2rem 0 0.2rem; }
+.section-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+.badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.25rem 0.65rem; border-radius: 999px; text-transform: uppercase; }
+.badge.core  { background: rgba(59, 130, 246, 0.22); color: #93C5FD; border: 1px solid rgba(59, 130, 246, 0.4); }
+.badge.extra { background: rgba(168, 85, 247, 0.22); color: #D8B4FE; border: 1px solid rgba(168, 85, 247, 0.4); }
+.section-sub { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.9rem; }
+
+/* ---------- Insight cards ---------- */
+.insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.insight-card {
+  padding: 1rem 1.2rem; border-radius: 16px; background: var(--card);
+  border: 1px solid var(--border); border-left: 4px solid var(--purple);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+.insight-title { font-size: 0.78rem; font-weight: 700; color: #C4B5FD; text-transform: uppercase; letter-spacing: 0.08em; }
+.insight-text { margin-top: 0.35rem; font-size: 0.95rem; line-height: 1.5; color: var(--text); }
+.note { margin-top: 0.9rem; font-size: 0.8rem; color: var(--muted); }
+
+/* ---------- Streamlit widgets ---------- */
+div[data-testid="stVerticalBlockBorderWrapper"]:has(canvas, img) {
+  background: var(--card); border: 1px solid var(--border) !important;
+  border-radius: 18px; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+div[data-testid="stExpander"] { border: 1px solid var(--border); border-radius: 14px; background: rgba(19, 26, 54, 0.6); }
+div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; }
+.stButton > button, .stDownloadButton > button {
+  border-radius: 10px; font-weight: 600; border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(59, 130, 246, 0.28)); color: #fff;
+}
+.stButton > button:hover, .stDownloadButton > button:hover { border-color: var(--purple); color: #fff; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero-title { font-size: 1.5rem; }
+  .kpi-value { font-size: 1.5rem; }
+}

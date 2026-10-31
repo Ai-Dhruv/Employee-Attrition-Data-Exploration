@@ -1,0 +1,11 @@
+# Dark navy / purple theme so Streamlit's own widgets match the custom CSS.
+[theme]
+base = "dark"
+primaryColor = "#8B5CF6"
+backgroundColor = "#0B1020"
+secondaryBackgroundColor = "#131A36"
+textColor = "#E6E9F5"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
