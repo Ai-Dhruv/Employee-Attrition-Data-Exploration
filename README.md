@@ -89,3 +89,6 @@ streamlit run app.py
 - Correlation heatmap and more filters (tenure, salary band)
 - Export dashboard summary as PDF
 - Deploy on Streamlit Community Cloud
+
+
+Live Link : https://employee-attrition-data-exploration-y4zb5s3uymsc4cp5uqrwtt.streamlit.app/
